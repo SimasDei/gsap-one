@@ -9,7 +9,8 @@
   </head>
   <body>
     <h1>Engineering for Tomorrow</h1>
-    <button id="cta">watch here</button>
+    <button id="cta">Play</button>
+    <button id="pause">Pause</button>
     <div class="panel">
       <img id="light" src="images/light.svg" alt="idea" />
       <p>
@@ -44,9 +45,21 @@
       );
       tl.to('p', 1, { opacity: 1, y: 20 });
       tl.to('.box', 3, { opacity: 1, scale: 1, ease: Elastic.easeOut }, '-=3.5');
+      tl.reversed(true);
 
       document.querySelector('#cta').addEventListener('click', function() {
-        tl.play();
+        tl.reversed(!tl.reversed());
+        if (tl.reversed()) {
+          tl.reverse();
+        } else tl.play();
+      });
+      document.querySelector('#pause').addEventListener('click', function() {
+        if (tl.paused()) {
+          tl.play();
+        } else {
+          tl.paused();
+          tl.paused(true);
+        }
       });
     </script>
   </body>
