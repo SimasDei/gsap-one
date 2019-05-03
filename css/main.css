@@ -1,0 +1,55 @@
+body {
+  font-family: "Montserrat";
+  padding: 9em;
+}
+
+h1 {
+  font-size: 5em;
+  width: 25%;
+  color: red;
+  line-height: 1em;
+}
+
+button {
+  background: none;
+  border: 1px solid black;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  width: 55%;
+  bottom: 0;
+  right: 0;
+  background: #eaeaea;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15% 7%;
+  height: 100vh;
+}
+
+.panel img {
+  width: 120px;
+  float: left;
+  margin-right: 50px;
+}
+
+.panel p {
+  font-size: 1.9em;
+  width: 80%;
+}
+
+.panel .box {
+  position: absolute;
+  border: 5px solid lightgray;
+  width: 65%;
+  height: 40%;
+  left: -7%;
+  top: 15%;
+  z-index: -1;
+}
+/*# sourceMappingURL=main.css.map */
