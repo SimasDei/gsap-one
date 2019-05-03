@@ -25,16 +25,19 @@ button {
   background: #eaeaea;
   box-sizing: border-box;
   padding: 15% 7%;
-  height: 100vh;
+  transform: scaleY(0);
+  transform-origin: bottom;
 
   img {
-    width: 120px;
+    width: 220px;
     float: left;
-    margin-right: 50px;
+    opacity: 0;
+    transform: translateY(-200px);
   }
   p {
     font-size: 1.9em;
     width: 80%;
+    opacity: 0;
   }
   .box {
     position: absolute;
@@ -44,5 +47,7 @@ button {
     left: -7%;
     top: 15%;
     z-index: -1;
+    opacity: 0;
+    transform: scale(0);
   }
 }

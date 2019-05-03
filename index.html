@@ -11,13 +11,33 @@
     <h1>Engineering for Tomorrow</h1>
     <button id="cta">watch here</button>
     <div class="panel">
-      <img src="images/light.svg" alt="idea" />
+      <img id="light" src="images/light.svg" alt="idea" />
       <p>
         Some great line about engineering and how we did something everyone is
         going to love
       </p>
       <div class="box"></div>
     </div>
+    <!-- TweenMax CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+    <!-- Custom Inline JS -->
+    <script>
+      document.querySelector("#cta").addEventListener("click", function() {
+        TweenMax.to(".panel", 1, {
+          scaleY: 1,
+          height: "100vh",
+          ease: Circ.easeOut,
+        });
+        TweenMax.to("#light", 1, {
+          opacity: 1,
+          y: 0,
+          delay: 0.8,
+          ease: Back.easeOut,
+        });
+        TweenMax.to("p", 1, { opacity: 1, y: 20, delay: 1.2 });
+        TweenMax.to(".box", 3, { opacity: 1, scale: 1, ease: Elastic.easeOut });
+      });
+    </script>
   </body>
 </html>
