@@ -4,62 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
     <link rel="stylesheet" href="css/main.css" />
-    <title>GSAP</title>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   </head>
   <body>
-    <h1>Engineering for Tomorrow</h1>
-    <button id="cta">Play</button>
-    <button id="pause">Pause</button>
-    <div class="panel">
-      <img id="light" src="images/light.svg" alt="idea" />
-      <p>
-        Some great line about engineering and how we did something everyone is going to love
-      </p>
-      <div class="box"></div>
+    <div class="container">
+      <div class="select">
+        <div class="input"></div>
+        <div class="select-options">
+          <ul>
+            <li><span>Option 1</span> | <span>Option 1 description</span></li>
+            <li><span>Option 2</span> | <span>Option 2 description</span></li>
+            <li><span>Option 3</span> | <span>Option 3 description</span></li>
+            <li class="selected"><span>Option 4</span> | <span>Option 4 description</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- TweenMax, TimelineMax CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
-
-    <!-- Custom Inline JS -->
     <script>
-      var tl = new TimelineMax({
-        paused: true,
-      });
-
-      tl.to('.panel', 1.5, {
-        scaleY: 1,
-        height: '100vh',
-        ease: Circ.easeOut,
-      });
-      tl.to(
-        '#light',
-        1,
-        {
-          opacity: 1,
-          y: 0,
-          ease: Back.easeOut,
-        },
-        0.5
-      );
-      tl.to('p', 1, { opacity: 1, y: 20 });
-      tl.to('.box', 3, { opacity: 1, scale: 1, ease: Elastic.easeOut }, '-=3.5');
-      tl.reversed(true);
-
-      document.querySelector('#cta').addEventListener('click', function() {
-        tl.reversed(!tl.reversed());
-        if (tl.reversed()) {
-          tl.reverse();
-        } else tl.play();
-      });
-      document.querySelector('#pause').addEventListener('click', function() {
-        if (tl.paused()) {
-          tl.play();
+      $(function() {
+        if ($('.select-options ul li').hasClass('selected')) {
+          $('.select .input').text($('.select-options li.selected > span:first-child').text());
         } else {
-          tl.paused();
-          tl.paused(true);
+          $('.select .input').text($('.select-options li:first-child > span:first-child').text());
         }
+        $('.select').click(function() {
+          $('.select-options').toggleClass('visible');
+        });
+        $('.select-options li').click(function() {
+          $('.selected').removeClass('selected');
+          $(this).addClass('selected');
+          $('.select .input').text(
+            $(this)
+              .find('span:first-child')
+              .text()
+          );
+        });
       });
     </script>
   </body>
