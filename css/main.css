@@ -1,5 +1,5 @@
 body {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding: 9em;
 }
 
@@ -13,10 +13,10 @@ h1 {
 button {
   background: none;
   border: 1px solid black;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 1.7em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   cursor: pointer;
 }
 
@@ -25,14 +25,14 @@ button {
   width: 55%;
   bottom: 0;
   right: 0;
-  background: #EAEAEA;
+  background: #eaeaea;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 15% 7%;
   -webkit-transform: scaleY(0);
-          transform: scaleY(0);
+  transform: scaleY(0);
   -webkit-transform-origin: bottom;
-          transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 .panel img {
@@ -41,7 +41,7 @@ button {
   margin-right: 50px;
   opacity: 0;
   -webkit-transform: translateY(-200px);
-          transform: translateY(-200px);
+  transform: translateY(-200px);
 }
 
 .panel p {
@@ -60,6 +60,6 @@ button {
   z-index: -1;
   opacity: 0;
   -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 /*# sourceMappingURL=main.css.map */
